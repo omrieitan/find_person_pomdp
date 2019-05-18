@@ -1,4 +1,4 @@
-#Find Person# - a black box for large POMDPs
+# Find Person - a black box for large POMDPs
 This class is an implementation for a 'black box'
   for large POMDPs solvers, as described on the paper:
   ['Monte-Carlo Planning in Large POMDPs' - by David Silver and Joel Veness](https://papers.nips.cc/paper/4031-monte-carlo-planning-in-large-pomdps.pdf)
@@ -8,8 +8,8 @@ This class is an implementation for a 'black box'
 
   * require _python 3.5_ or higher to run.
 
-##Description
-###Actions:
+## Description
+### Actions:
   the actions space is given by the following functions -
   1. _ask()_ - if the agent is close enough to any of the people(within his kernel),
       he would ask that person whether he is the right person and get an answer that is
@@ -22,7 +22,7 @@ This class is an implementation for a 'black box'
   * in order to make the actions space finite, the biggest step a robot can take is defined
       by the initial max x and y distances over all people in the grid world.
 
-###Observations:
+### Observations:
 the observations of the robot, given by his sensors(LiDAR, Ultrasonic, etc.), are defined by -
 1. _self.estimated_locations_ - an array of estimated location, of every person. sampled from each
     kernel in self.kernels.
@@ -36,14 +36,14 @@ the observations of the robot, given by his sensors(LiDAR, Ultrasonic, etc.), ar
     * _self.person_match_ - an array of probabilities for each person to be
         the correct answer. all entries sum up to 1.
 
-###State:
+### State:
 the real state of the robot at any given time is defined by -
 1. _self.answer_- the index of the right answer.
 2. _self.locations_ - an array of the real location, of every person.
 
 
 
-###Reward:
+### Reward:
 defined by _self.reward_
 _move(x,y)_ actions would result in relatively small negative reward
 the _ask()_ action would result in medium-big negative reward
@@ -53,7 +53,7 @@ and equally big negative reward otherwise.
     should choose to get very close to a person before asking, and he should
     guess only when he's certain of the answer.
 
-##Additional notes
+## Additional notes
 * in order to make the state and observations spaces finite, we restricted the
   maximum distance the robot can be from the furthest person to be _(2 * self.MAX_DIST)_.
   this is done using the _self.valid_move(dx, dy)_ method.
@@ -63,7 +63,7 @@ and equally big negative reward otherwise.
   it's purpose is to help you debug and understand the functionality
   of the black box.
 
-##Restrictions:
+## Restrictions:
 1. must define at least 2 people.
 2. only odd sized kernels are supported.
 3. no kernels overlaps are supported.
