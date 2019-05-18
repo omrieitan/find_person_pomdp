@@ -1,4 +1,4 @@
-#Find Person - a black box for large POMDPs
+#Find Person# - a black box for large POMDPs
 This class is an implementation for a 'black box'
   for large POMDPs solvers, as described on the paper:
   ['Monte-Carlo Planning in Large POMDPs' - by David Silver and Joel Veness](https://papers.nips.cc/paper/4031-monte-carlo-planning-in-large-pomdps.pdf)
